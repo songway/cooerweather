@@ -1,6 +1,7 @@
 package com.cooerwether.app.activity;
 
 import com.cooerweather.app.R;
+import com.cooerwether.app.service.AutoUpdateService;
 import com.cooerwether.app.util.HttpCallbackListener;
 import com.cooerwether.app.util.HttpUtil;
 import com.cooerwether.app.util.Utility;
@@ -137,6 +138,8 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
 		
+		Intent intent = new Intent(this,AutoUpdateService.class);
+		startService(intent);
 	}
 
 
